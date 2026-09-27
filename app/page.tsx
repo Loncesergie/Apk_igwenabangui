@@ -1,3 +1,4 @@
+import Image from "next/image";
 import {
   Download,
   Smartphone,
@@ -23,10 +24,16 @@ export default function Home() {
         {/* En-tête */}
         <header className="mb-7 text-center">
 
-          <div className="mx-auto mb-4 flex h-24 w-24 items-center justify-center rounded-[24px] bg-[#d81b60] shadow-lg">
-            <span className="text-4xl font-black text-white">
-              I
-            </span>
+          {/* Logo IGWENABANGUI */}
+          <div className="mx-auto mb-4 h-24 w-24 overflow-hidden rounded-[24px] shadow-lg">
+            <Image
+              src="/icon.png"
+              alt="Logo IGWENABANGUI"
+              width={96}
+              height={96}
+              priority
+              className="h-24 w-24 object-cover"
+            />
           </div>
 
           <h1 className="text-3xl font-black text-slate-900">
@@ -44,7 +51,7 @@ export default function Home() {
 
         </header>
 
-        {/* Présentation + téléchargement */}
+        {/* Présentation et téléchargement */}
         <section className="rounded-[28px] border border-pink-100 bg-white p-6 shadow-xl shadow-pink-100/50">
 
           <h2 className="text-xl font-bold text-slate-900">
@@ -62,11 +69,11 @@ export default function Home() {
           </p>
 
           <p className="mt-3 text-sm leading-6 text-slate-500">
-            Vos retours sur les bugs, les informations affichées et votre
-            expérience d&apos;utilisation sont les bienvenus.
+            Après votre test, partagez-moi les bugs rencontrés et vos
+            suggestions d&apos;amélioration.
           </p>
 
-          {/* Informations application */}
+          {/* Informations de l'application */}
           <div className="mt-6 grid grid-cols-3 gap-2">
 
             <Info
@@ -89,7 +96,7 @@ export default function Home() {
 
           </div>
 
-          {/* Bouton téléchargement */}
+          {/* Bouton de téléchargement */}
           <a
             href={app.apk}
             className="mt-6 flex w-full items-center justify-center gap-3 rounded-2xl bg-[#d81b60] px-6 py-4 font-bold text-white shadow-lg shadow-pink-200 transition hover:bg-[#bd1553] active:scale-[0.98]"
@@ -99,12 +106,12 @@ export default function Home() {
           </a>
 
           <p className="mt-3 text-center text-xs text-slate-400">
-            Android uniquement • {app.size}
+            Android uniquement • {app.size} • Version bêta privée
           </p>
 
         </section>
 
-        {/* Instructions */}
+        {/* Instructions d'installation */}
         <section className="mt-5 rounded-[28px] bg-white p-6 shadow-sm">
 
           <h2 className="flex items-center gap-2 text-lg font-bold text-slate-900">
@@ -123,7 +130,6 @@ export default function Home() {
               "Autorisez l’installation depuis cette source si Android le demande.",
               "Installez IGWENABANGUI.",
             ].map((step, index) => (
-
               <div
                 key={step}
                 className="flex gap-3"
@@ -138,7 +144,6 @@ export default function Home() {
                 </p>
 
               </div>
-
             ))}
 
           </div>
@@ -160,15 +165,15 @@ export default function Home() {
             </p>
 
             <p className="mt-1 text-xs leading-5 text-amber-800">
-              Android peut afficher un avertissement car cette version
-              de test n&apos;est pas encore distribuée via Google Play.
+              Android peut afficher un avertissement de sécurité car cette
+              version bêta n&apos;est pas encore distribuée via Google Play.
             </p>
 
           </div>
 
         </section>
 
-        {/* Éditeur */}
+        {/* Informations éditeur */}
         <section className="mt-5 rounded-[28px] border border-pink-100 bg-white p-6 shadow-sm">
 
           <div className="flex items-start gap-4">
@@ -189,8 +194,9 @@ export default function Home() {
 
               <p className="mt-2 text-sm leading-6 text-slate-500">
                 Éditeur et développeur d&apos;IGWENABANGUI, une application
-                pensée pour faciliter l&apos;accès aux lieux, services,
-                événements et informations utiles à Bangui.
+                consacrée à Bangui pour faciliter l&apos;accès aux lieux,
+                établissements, services, événements et informations utiles
+                de la ville.
               </p>
 
             </div>
@@ -205,8 +211,8 @@ export default function Home() {
           Merci de participer au test
         </div>
 
-        {/* Footer */}
-        <footer className="mt-8 text-center text-xs leading-5 text-slate-400">
+        {/* Pied de page */}
+        <footer className="mt-8 pb-4 text-center text-xs leading-5 text-slate-400">
 
           <p>
             © 2026 IGWENABANGUI
@@ -227,7 +233,7 @@ export default function Home() {
   );
 }
 
-/* Composant informations */
+/* Carte d'information */
 function Info({
   icon,
   label,
