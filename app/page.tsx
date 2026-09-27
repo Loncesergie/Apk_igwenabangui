@@ -9,9 +9,9 @@ import {
 
 const app = {
   version: "1.9.0",
-  size: "150 Mo",
+  size: "156 Mo",
   updatedAt: "27/09/26",
-  apk: "/downloads/igwenabangui.apk",
+  apk: "https://github.com/Loncesergie/Apk_igwenabangui/releases/download/v1.9.0/igwenabangui.apk",
 };
 
 export default function Home() {
@@ -39,7 +39,7 @@ export default function Home() {
           </div>
         </header>
 
-        {/* Carte de téléchargement */}
+        {/* Carte principale */}
         <section className="rounded-[28px] border border-pink-100 bg-white p-6 shadow-xl">
 
           <h2 className="text-xl font-bold">
@@ -51,7 +51,7 @@ export default function Home() {
             signaler les bugs rencontrés.
           </p>
 
-          {/* Informations APK */}
+          {/* Informations de l'application */}
           <div className="mt-6 grid grid-cols-3 gap-2">
 
             <Info
@@ -74,23 +74,22 @@ export default function Home() {
 
           </div>
 
-          {/* Téléchargement APK */}
+          {/* Téléchargement */}
           <a
             href={app.apk}
-            download="igwenabangui.apk"
-            className="mt-6 flex w-full items-center justify-center gap-3 rounded-2xl bg-[#d81b60] px-6 py-4 font-bold text-white transition hover:bg-[#bd1553] active:scale-[0.98]"
+            className="mt-6 flex w-full items-center justify-center gap-3 rounded-2xl bg-[#d81b60] px-6 py-4 font-bold text-white shadow-lg shadow-pink-200 transition hover:bg-[#bd1553] active:scale-[0.98]"
           >
             <Download size={21} />
             Télécharger l&apos;APK
           </a>
 
           <p className="mt-3 text-center text-xs text-slate-400">
-            Android uniquement
+            Android uniquement • 156 Mo
           </p>
 
         </section>
 
-        {/* Installation */}
+        {/* Instructions */}
         <section className="mt-5 rounded-[28px] bg-white p-6 shadow-sm">
 
           <h2 className="flex items-center gap-2 text-lg font-bold">
@@ -109,6 +108,7 @@ export default function Home() {
               "Autorisez l’installation depuis cette source si Android le demande.",
               "Installez IGWENABANGUI.",
             ].map((step, index) => (
+
               <div
                 key={step}
                 className="flex gap-3"
@@ -123,6 +123,7 @@ export default function Home() {
                 </p>
 
               </div>
+
             ))}
 
           </div>
@@ -134,7 +135,7 @@ export default function Home() {
 
           <ShieldAlert
             size={22}
-            className="shrink-0 text-amber-600"
+            className="mt-0.5 shrink-0 text-amber-600"
           />
 
           <div>
@@ -158,6 +159,7 @@ export default function Home() {
           Merci de participer au test
         </div>
 
+        {/* Footer */}
         <footer className="mt-8 text-center text-xs text-slate-400">
           © 2026 IGWENABANGUI
         </footer>
@@ -167,6 +169,7 @@ export default function Home() {
   );
 }
 
+/* Composant informations */
 function Info({
   icon,
   label,
