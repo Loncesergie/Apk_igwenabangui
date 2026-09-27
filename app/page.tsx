@@ -5,6 +5,7 @@ import {
   CheckCircle2,
   CalendarDays,
   HardDrive,
+  UserRound,
 } from "lucide-react";
 
 const app = {
@@ -21,11 +22,14 @@ export default function Home() {
 
         {/* En-tête */}
         <header className="mb-7 text-center">
+
           <div className="mx-auto mb-4 flex h-24 w-24 items-center justify-center rounded-[24px] bg-[#d81b60] shadow-lg">
-            <span className="text-4xl font-black text-white">I</span>
+            <span className="text-4xl font-black text-white">
+              I
+            </span>
           </div>
 
-          <h1 className="text-3xl font-black">
+          <h1 className="text-3xl font-black text-slate-900">
             IGWENABANGUI
           </h1>
 
@@ -37,21 +41,32 @@ export default function Home() {
             <Smartphone size={16} />
             Version de test Android
           </div>
+
         </header>
 
-        {/* Carte principale */}
-        <section className="rounded-[28px] border border-pink-100 bg-white p-6 shadow-xl">
+        {/* Présentation + téléchargement */}
+        <section className="rounded-[28px] border border-pink-100 bg-white p-6 shadow-xl shadow-pink-100/50">
 
-          <h2 className="text-xl font-bold">
+          <h2 className="text-xl font-bold text-slate-900">
             Testez IGWENABANGUI
           </h2>
 
-          <p className="mt-2 text-sm leading-6 text-slate-500">
-            Cette version est destinée aux testeurs. Merci de nous
-            signaler les bugs rencontrés.
+          <p className="mt-3 text-sm leading-6 text-slate-500">
+            Je suis{" "}
+            <strong className="font-semibold text-slate-700">
+              Lonce Sergie BETTO
+            </strong>
+            , éditeur et développeur d&apos;IGWENABANGUI. Je mets cette
+            version Android à votre disposition afin de tester
+            l&apos;application avant sa publication officielle.
           </p>
 
-          {/* Informations de l'application */}
+          <p className="mt-3 text-sm leading-6 text-slate-500">
+            Vos retours sur les bugs, les informations affichées et votre
+            expérience d&apos;utilisation sont les bienvenus.
+          </p>
+
+          {/* Informations application */}
           <div className="mt-6 grid grid-cols-3 gap-2">
 
             <Info
@@ -74,7 +89,7 @@ export default function Home() {
 
           </div>
 
-          {/* Téléchargement */}
+          {/* Bouton téléchargement */}
           <a
             href={app.apk}
             className="mt-6 flex w-full items-center justify-center gap-3 rounded-2xl bg-[#d81b60] px-6 py-4 font-bold text-white shadow-lg shadow-pink-200 transition hover:bg-[#bd1553] active:scale-[0.98]"
@@ -84,7 +99,7 @@ export default function Home() {
           </a>
 
           <p className="mt-3 text-center text-xs text-slate-400">
-            Android uniquement • 156 Mo
+            Android uniquement • {app.size}
           </p>
 
         </section>
@@ -92,7 +107,7 @@ export default function Home() {
         {/* Instructions */}
         <section className="mt-5 rounded-[28px] bg-white p-6 shadow-sm">
 
-          <h2 className="flex items-center gap-2 text-lg font-bold">
+          <h2 className="flex items-center gap-2 text-lg font-bold text-slate-900">
             <Smartphone
               size={20}
               className="text-[#d81b60]"
@@ -153,6 +168,37 @@ export default function Home() {
 
         </section>
 
+        {/* Éditeur */}
+        <section className="mt-5 rounded-[28px] border border-pink-100 bg-white p-6 shadow-sm">
+
+          <div className="flex items-start gap-4">
+
+            <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-[#fce7f1] text-[#d81b60]">
+              <UserRound size={21} />
+            </div>
+
+            <div>
+
+              <p className="text-xs font-semibold uppercase tracking-wide text-[#d81b60]">
+                Éditeur de l&apos;application
+              </p>
+
+              <h2 className="mt-1 text-lg font-bold text-slate-900">
+                Lonce Sergie BETTO
+              </h2>
+
+              <p className="mt-2 text-sm leading-6 text-slate-500">
+                Éditeur et développeur d&apos;IGWENABANGUI, une application
+                pensée pour faciliter l&apos;accès aux lieux, services,
+                événements et informations utiles à Bangui.
+              </p>
+
+            </div>
+
+          </div>
+
+        </section>
+
         {/* Remerciement */}
         <div className="mt-6 flex items-center justify-center gap-2 text-sm text-slate-400">
           <CheckCircle2 size={16} />
@@ -160,8 +206,20 @@ export default function Home() {
         </div>
 
         {/* Footer */}
-        <footer className="mt-8 text-center text-xs text-slate-400">
-          © 2026 IGWENABANGUI
+        <footer className="mt-8 text-center text-xs leading-5 text-slate-400">
+
+          <p>
+            © 2026 IGWENABANGUI
+          </p>
+
+          <p>
+            Édité et développé par Lonce Sergie BETTO
+          </p>
+
+          <p>
+            Bangui à portée de main
+          </p>
+
         </footer>
 
       </div>
@@ -190,7 +248,7 @@ function Info({
         {label}
       </p>
 
-      <p className="mt-1 text-xs font-bold">
+      <p className="mt-1 text-xs font-bold text-slate-800">
         {value}
       </p>
 
